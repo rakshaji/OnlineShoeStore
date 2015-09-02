@@ -1,0 +1,89 @@
+<!--    
+	  Singhania, Raksha    Account:  jadrn036
+	  CS645, Spring 2015
+	  Project #3
+-->
+
+<%@page import="helpers.AppHelper"%>
+<%@page import="helpers.Product"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Iterator"%>
+<jsp:include page="Header.jsp"></jsp:include>
+<!-- body starts -->
+<div id="main_body">
+	<div id="success_div" class="validateTips "></div>
+	<div id="right_wrapper2">
+		<p id="cart_header" class="ui-widget-header ui-corner-all">YOUR
+			CART</p>
+			<button type="button" class="ui-widget-header ui-corner all"
+							name="deleteall">Delete All</button>
+		<%
+			ArrayList<Product> products = AppHelper.getProducts(request);
+			if (products != null) {
+				Iterator it = products.iterator();
+				while (it.hasNext()) {
+					Product product = (Product) it.next();
+					if (product != null) {
+		%>
+		<div id="view_cart_item">
+			<img id="product_medium_image"
+				src="/~jadrn036/proj1/tabs/_p_images/<%=product.getImage()%>" />
+			<div id="cart_prod_info">
+				<p id="mini_detail_label">Manufacturer: <%=product.getManufacturer()%></p>
+				<p id="mini_detail_label" class="sku">Sku: <%=product.getSku()%></p>
+				<div id="price_quantity_total_div">
+					<div id="price_div">
+						<p id="cart_detail_header">Price: </p>
+						<span id="price">$<%=product.getPrice()%></span>
+						<p id="stock_left">Only <%=product.getOnHandQuantity()%> left in stock.</p>
+						<button type="button" class="ui-widget-header ui-corner all"
+							name="delete">Delete</button>
+					</div>
+					<div id="select_quantity_div">
+						<p id="cart_detail_header">Quantity:</p>
+						<input id="spinner" name="<%=product.getOnHandQuantity()%>" disabled="disabled">
+					</div>
+					<div id="total_div">
+						<p id="cart_detail_header">Sub-total:</p>
+						<p id="item_price_total"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%
+			}
+				}
+			}
+		%>
+	</div>
+	<div id="left_wrapper2">
+		<p id="cart_header">ORDER SUMMARY</p>
+		<hr />
+		<div id="order_summary">
+			<div id="left_side">
+				<p id="cart_detail_header">Items subtotal:</p>
+				<p id="cart_detail_header">Estimated Shipping:</p>
+				<p id="cart_detail_header">Sales Tax (8%):</p>
+				<hr>
+				<p id="cart_detail_header">Total:</p>
+			</div>
+			<div id="right_side">
+				<p id="cart_detail_header" class="total">$0.00</p>
+				<p id="cart_detail_header">$5.00</p>
+				<p id="cart_detail_header" class="salesTax">$0.00</p>
+				<hr>
+				<p id="cart_detail_header" class="totalAfterTax"></p>
+			</div>
+			<button type="button"
+				class="checkout_btn ui-widget-header ui-corner-all"
+				name="checkout_btn">Checkout</button>
+			<button type="button"
+				class="continue_btn ui-widget-header ui-corner-all"
+				name="continue_btn">Continue Shopping</button>
+		</div>
+
+	</div>
+</div>
+<!-- body ends -->
+
+<jsp:include page="Footer.jsp"></jsp:include>

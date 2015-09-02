@@ -1,0 +1,53 @@
+	<?xml version="1.0" encoding="utf-8"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<!--    Singhania, Raksha    Account:  jadrn036
+		  CS645, Spring 2015
+		  Project #2
+	-->
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+		<meta charset="utf-8">
+	    <meta http-equiv="Pragma" content="no-cache">
+	    <meta http-equiv="cache-control" content="no-cache, no-store">
+	    <meta http-equiv="Expires" CONTENT="-1">	
+		<script type="text/javascript" src="/jadrn036/css/jquery-ui/external/jquery/jquery.js" ></script>
+		<script type="text/javascript" src="/jadrn036/css/jquery-ui/jquery-ui.js"></script>
+		<script type="text/javascript" src="/jadrn036/css/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/jadrn036/js/login.js" ></script>
+		<link rel="stylesheet" href="/jadrn036/css/jquery-ui/jquery-ui.css">
+		<link rel="stylesheet" href="/jadrn036/css/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="/jadrn036/css/jquery-ui/jquery-ui.theme.css">
+		<link rel="stylesheet" href="/jadrn036/css/jquery-ui/jquery-ui.theme.min.css">
+		<link rel="stylesheet" href="/jadrn036/css/jquery-ui/jquery-ui.structure.css">
+		<link rel="stylesheet" href="/jadrn036/css/jquery-ui/jquery-ui.structure.min.css">
+		<link rel="stylesheet" href="/jadrn036/css/jquery-ui/jquery-ui.structure.css">
+		<link rel="stylesheet" href="/jadrn036/css/jquery-ui/jquery-ui.min.css">
+		
+		<link rel="stylesheet" href="/jadrn036/css2/login.css" ></link>		
+		<title> Login </title>
+	</head>
+	<body>
+		<p align="center" id="store_pic"><img src="/jadrn036/app_images/logo_small.png" /></p>
+		<div id="login">
+			<div class="toggler">
+			  <div id="effect" class="ui-widget-content ui-corner-all">
+			    <h3 class="ui-widget-header">Employee Login</h3>
+			    <p class="validateTips">All fields are required.</p>
+				  <form method="post" action="/jadrn036/servlet/Login" accept-charset="utf-8">
+				    <fieldset>
+				      <input type="text" name="username" id="name" placeholder="Username" class="text ui-widget-content ui-corner-all">
+				      <input type="password" name="password" id="password" placeholder="Password" class="text ui-widget-content ui-corner-all">
+				 
+				      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+				      <button type="submit" id="button" name="login" class="ui-widget-content ui-corner-all">Login</button>
+				      <button  type="reset" id="button" name="reset" class="ui-widget-content ui-corner-all">Clear</button>
+				    </fieldset>
+				  </form>
+			  </div>
+			</div>
+		</div>
+	</body>
+</html>

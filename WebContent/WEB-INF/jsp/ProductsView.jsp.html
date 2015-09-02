@@ -1,0 +1,47 @@
+<!--    
+	  Singhania, Raksha    Account:  jadrn036
+	  CS645, Spring 2015
+	  Project #3
+-->
+
+<%@page import="java.util.ArrayList"%>
+<%@page import="helpers.AppHelper"%>
+<%@page import="helpers.Product"%>
+<%@page import="java.util.Iterator"%>
+<div id="products_div">
+	<%
+			ArrayList<Product> products = AppHelper.getProducts(request);
+			if (products != null) {
+				Iterator it = products.iterator();
+				while (it.hasNext()) {
+					Product product = (Product) it.next();
+					if (product != null) {
+	%>
+	<div class="product_wrapper" id='<%=product.getSku() %>' >
+		<div id="add_to_cart_div">
+			<div>
+				<button type="button" id="add_to_cart_btn" class="addToCartHover ui-widget-header ui-corner-all" >ADD TO CART</button>
+			</div>
+			<div id="msg_div" class="validateTips msg"></div>
+		</div>
+		<div id="product_image_div">
+			<img id="product_image"
+				src="/~jadrn036/proj1/tabs/_p_images/<%=product.getImage()%>" />
+		</div>
+		<div id="product_summary">
+			<hr />
+			<p class="product_detail" id="product_model">Manufacturer: <%=product.getManufacturer()%></p>
+			<p id="<%=product.getOnHandQuantity()%>" class="product_detail_status"><%=product.getAvailabilityStatus()%></p>
+			<p class="product_detail_price">Price: $<%=product.getPrice()%></p>
+		</div>
+	</div>
+	<%
+					}
+				}
+			} else {
+	%>
+	<p class="no_product">No products found</p>
+	<%
+			}
+	%>
+</div>

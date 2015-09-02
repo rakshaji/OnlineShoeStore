@@ -1,0 +1,497 @@
+<!--    
+	  Singhania, Raksha    Account:  jadrn036
+	  CS645, Spring 2015
+	  Project #3
+-->
+
+<%@page import="helpers.AppHelper"%>
+<%@page import="helpers.Product"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Iterator"%>
+<jsp:include page="Header.jsp"></jsp:include>
+<!-- body starts -->
+<div id="main_body">
+	<div id="success_div" class="validateTips "></div>
+	<div id="right_wrapper2">
+		<p id="cart_header" class="ui-widget-header ui-corner-all">Delivery
+			Details > Payment > Order Summary </p>
+		<div id="accordion">
+			<h3>DELIVERY DETAILS</h3>
+			<div id="parent">
+				<p>We ship anywhere in the US. We currently do not ship
+					internationally.</p>
+				<div id="shipping_adr_div">
+					<div class="row_wrapper_div"><p id="mini_detail_label" ><b>Shipping Address:</b></p></div>
+					<div id="first_name" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="firstname"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="*  First Name" maxlength="50">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="last_name" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="lastname"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="*  Last Name" maxlength="50">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="address1" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="address1"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="*  Street Address, PO Box" maxlength="50">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="address2" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="address2"
+								class="address2 text ui-widget-content ui-corner-all infoText"
+								placeholder="Apartment, Suite, Unit, Building, Floor (optional)"
+								maxlength="50">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="city" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="city"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="*  City/Town" maxlength="50">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="state_div" class="row_wrapper_div">
+						<div class="left_fields combo_div">
+							<select name="state" id="state">
+								<option class="selectoption" value="">State</option>
+								<option class="selectoption" value="AA">AA
+									Military</option>
+								<option class="selectoption" value="AE">AE
+									Military</option>
+								<option class="selectoption" value="AP">AP
+									Military</option>
+								<option class="selectoption" value="AL">Alabama</option>
+								<option class="selectoption" value="AK">Alaska</option>
+								<option class="selectoption" value="AZ">Arizona</option>
+								<option class="selectoption" value="AR">Arkansas</option>
+								<option class="selectoption" value="CA">California</option>
+								<option class="selectoption" value="CO">Colorado</option>
+								<option class="selectoption" value="CT">Connecticut</option>
+								<option class="selectoption" value="DE">Delaware</option>
+								<option class="selectoption" 
+									value="DC">District of Columbia</option>
+								<option class="selectoption" value="FL">Florida</option>
+								<option class="selectoption" value="GA">Georgia</option>
+								<option class="selectoption" value="HI">Hawaii</option>
+								<option class="selectoption" value="ID">Idaho</option>
+								<option class="selectoption" value="IL">Illinois</option>
+								<option class="selectoption" value="IN">Indiana</option>
+								<option class="selectoption" value="IA">Iowa</option>
+								<option class="selectoption" value="KS">Kansas</option>
+								<option class="selectoption" value="KY">Kentucky</option>
+								<option class="selectoption" value="LA">Louisiana</option>
+								<option class="selectoption" value="ME">Maine</option>
+								<option class="selectoption" value="MD">Maryland</option>
+								<option class="selectoption" value="MA">Massachusetts</option>
+								<option class="selectoption" value="MI">Michigan</option>
+								<option class="selectoption" value="MN">Minnesota</option>
+								<option class="selectoption" value="MS">Mississippi</option>
+								<option class="selectoption" value="MO">Missouri</option>
+								<option class="selectoption" value="MT">Montana</option>
+								<option class="selectoption" value="NE">Nebraska</option>
+								<option class="selectoption" value="NV">Nevada</option>
+								<option class="selectoption" value="NH">New
+									Hampshire</option>
+								<option class="selectoption" value="NJ">New
+									Jersey</option>
+								<option class="selectoption" value="NM">New
+									Mexico</option>
+								<option class="selectoption" value="NY">New
+									York</option>
+								<option class="selectoption" value="NC">North
+									Carolina</option>
+								<option class="selectoption" value="ND">North
+									Dakota</option>
+								<option class="selectoption" value="OH">Ohio</option>
+								<option class="selectoption" value="OK">Oklahoma</option>
+								<option class="selectoption" value="OR">Oregon</option>
+								<option class="selectoption" value="PA">Pennsylvania</option>
+								<option class="selectoption" value="RI">Rhode
+									Island</option>
+								<option class="selectoption" value="SC">South
+									Carolina</option>
+								<option class="selectoption" value="SD">South
+									Dakota</option>
+								<option class="selectoption" value="TN">Tennessee</option>
+								<option class="selectoption" value="TX">Texas</option>
+								<option class="selectoption" value="UT">Utah</option>
+								<option class="selectoption" value="VT">Vermont</option>
+								<option class="selectoption" value="VA">Virginia</option>
+								<option class="selectoption" value="WA">Washington</option>
+								<option class="selectoption" value="WV">West
+									Virginia</option>
+								<option class="selectoption" value="WI">Wisconsin</option>
+								<option class="selectoption" value="WY">Wyoming</option>
+							</select>
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="zip_div" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="zip_code"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="*  Zip Code" maxlength="5">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="country" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="country"
+								class="text ui-widget-content ui-corner-all infoText"
+								value="Country: United States" maxlength="5" disabled="disabled">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="phone" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="phone"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="* Phone" maxlength="12">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="check_same_addr" class="row_wrapper_div">
+						<div class="left_fields">
+							<a class="list-item" id="is_address_same"><input
+								type="checkbox" id="is_address_same" >Billing
+								address is same as shipping address</a>
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+				</div>
+			<!-- </div>
+			<h3>BILLING ADDRESS</h3>
+			<div id="parent"> -->
+				<div id="billing_adr_div">
+					<div id="duplicate_div">
+						<div class="row_wrapper_div"><p id="mini_detail_label" ><b>Billing Address:</b></p></div>
+						<div id="first_name" class="row_wrapper_div">
+							<div class="left_fields">
+								<input type="text" name="firstname"
+									class="text ui-widget-content ui-corner-all infoText"
+									placeholder="*  First Name" maxlength="50">
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+						<div id="last_name" class="row_wrapper_div">
+							<div class="left_fields">
+								<input type="text" name="lastname"
+									class="text ui-widget-content ui-corner-all infoText"
+									placeholder="*  Last Name" maxlength="50">
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+						<div id="address1" class="row_wrapper_div">
+							<div class="left_fields">
+								<input type="text" name="address1"
+									class="text ui-widget-content ui-corner-all infoText"
+									placeholder="*  Street Address, PO Box" maxlength="50">
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+						<div id="address2" class="row_wrapper_div">
+							<div class="left_fields">
+								<input type="text" name="address2"
+									class="address2 text ui-widget-content ui-corner-all infoText"
+									placeholder="Apartment, Suite, Unit, Building, Floor (optional)"
+									maxlength="50">
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+						<div id="city" class="row_wrapper_div">
+							<div class="left_fields">
+								<input type="text" name="city"
+									class="text ui-widget-content ui-corner-all infoText"
+									placeholder="*  City/Town" maxlength="50">
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+						<div id="state_div" class="row_wrapper_div">
+							<div class="left_fields combo_div">
+								<select name="state" id="state">
+									<option class="selectoption" value="">State</option>
+								<option class="selectoption" value="AA">AA
+									Military</option>
+								<option class="selectoption" value="AE">AE
+									Military</option>
+								<option class="selectoption" value="AP">AP
+									Military</option>
+								<option class="selectoption" value="AL">Alabama</option>
+								<option class="selectoption" value="AK">Alaska</option>
+								<option class="selectoption" value="AZ">Arizona</option>
+								<option class="selectoption" value="AR">Arkansas</option>
+								<option class="selectoption" value="CA">California</option>
+								<option class="selectoption" value="CO">Colorado</option>
+								<option class="selectoption" value="CT">Connecticut</option>
+								<option class="selectoption" value="DE">Delaware</option>
+								<option class="selectoption" 
+									value="DC">District of Columbia</option>
+								<option class="selectoption" value="FL">Florida</option>
+								<option class="selectoption" value="GA">Georgia</option>
+								<option class="selectoption" value="HI">Hawaii</option>
+								<option class="selectoption" value="ID">Idaho</option>
+								<option class="selectoption" value="IL">Illinois</option>
+								<option class="selectoption" value="IN">Indiana</option>
+								<option class="selectoption" value="IA">Iowa</option>
+								<option class="selectoption" value="KS">Kansas</option>
+								<option class="selectoption" value="KY">Kentucky</option>
+								<option class="selectoption" value="LA">Louisiana</option>
+								<option class="selectoption" value="ME">Maine</option>
+								<option class="selectoption" value="MD">Maryland</option>
+								<option class="selectoption" value="MA">Massachusetts</option>
+								<option class="selectoption" value="MI">Michigan</option>
+								<option class="selectoption" value="MN">Minnesota</option>
+								<option class="selectoption" value="MS">Mississippi</option>
+								<option class="selectoption" value="MO">Missouri</option>
+								<option class="selectoption" value="MT">Montana</option>
+								<option class="selectoption" value="NE">Nebraska</option>
+								<option class="selectoption" value="NV">Nevada</option>
+								<option class="selectoption" value="NH">New
+									Hampshire</option>
+								<option class="selectoption" value="NJ">New
+									Jersey</option>
+								<option class="selectoption" value="NM">New
+									Mexico</option>
+								<option class="selectoption" value="NY">New
+									York</option>
+								<option class="selectoption" value="NC">North
+									Carolina</option>
+								<option class="selectoption" value="ND">North
+									Dakota</option>
+								<option class="selectoption" value="OH">Ohio</option>
+								<option class="selectoption" value="OK">Oklahoma</option>
+								<option class="selectoption" value="OR">Oregon</option>
+								<option class="selectoption" value="PA">Pennsylvania</option>
+								<option class="selectoption" value="RI">Rhode
+									Island</option>
+								<option class="selectoption" value="SC">South
+									Carolina</option>
+								<option class="selectoption" value="SD">South
+									Dakota</option>
+								<option class="selectoption" value="TN">Tennessee</option>
+								<option class="selectoption" value="TX">Texas</option>
+								<option class="selectoption" value="UT">Utah</option>
+								<option class="selectoption" value="VT">Vermont</option>
+								<option class="selectoption" value="VA">Virginia</option>
+								<option class="selectoption" value="WA">Washington</option>
+								<option class="selectoption" value="WV">West
+									Virginia</option>
+								<option class="selectoption" value="WI">Wisconsin</option>
+								<option class="selectoption" value="WY">Wyoming</option>
+								</select>
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+						<div id="zip_div" class="row_wrapper_div">
+							<div class="left_fields">
+								<input type="text" name="zip_code"
+									class="text ui-widget-content ui-corner-all infoText"
+									placeholder="*  Zip Code" maxlength="5">
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+						<div id="country" class="row_wrapper_div">
+							<div class="left_fields">
+								<input type="text" name="country"
+									class="text ui-widget-content ui-corner-all infoText"
+									value="Country: United States" maxlength="5"
+									disabled="disabled">
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+						<div id="phone" class="row_wrapper_div">
+							<div class="left_fields">
+								<input type="text" name="phone"
+									class="text ui-widget-content ui-corner-all infoText"
+									placeholder="* Phone" maxlength="12">
+							</div>
+							<div class="right_fields">
+								<span id="error_div" class="validateTips"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h3>PAYMENT METHOD</h3>
+			<div id="parent">
+				<div id="pay_method_div">
+					<div id="card_type_div" class="row_wrapper_div">
+						<div class="left_fields combo_div">
+							<label for="card_type">Select a card type* </label> <select
+								name="card_type" id="card_type">
+								<option class="selectoption" value="0">Visa</option>
+								<option class="selectoption" value="1">American Express</option>
+								<option class="selectoption" value="2">Master Card</option>
+								<option class="selectoption" value="3">Discover</option>
+							</select>
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="name_on_card" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="name_on_card"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="* Name on Card" maxlength="50">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="card_num" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="card_num"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="* Card Number" maxlength="19">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="expires_mon_div" class="row_wrapper_div">
+						<div class="left_fields combo_div">
+							<label for="expires_mon">Expiry Month* </label> <select
+								name="expires_mon" id="expires_mon">
+								<option class="selectoption" value="0">01</option>
+								<option class="selectoption" value="1">02</option>
+								<option class="selectoption" value="2">03</option>
+								<option class="selectoption" value="3">04</option>
+								<option class="selectoption" value="4">05</option>
+								<option class="selectoption" value="5">06</option>
+								<option class="selectoption" value="6">07</option>
+								<option class="selectoption" value="7">08</option>
+								<option class="selectoption" value="8">09</option>
+								<option class="selectoption" value="9">10</option>
+								<option class="selectoption" value="10">11</option>
+								<option class="selectoption" value="11">12</option>
+							</select>
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="expires_year" class="row_wrapper_div">
+						<div class="left_fields combo_div">
+							<label for="expires_yr">Expiry Year* </label> <select
+								name="expires_yr" id="expires_yr">
+								<option class="selectoption" value="2015">2015</option>
+								<option class="selectoption" value="2016">2016</option>
+								<option class="selectoption" value="2017">2017</option>
+								<option class="selectoption" value="2018">2018</option>
+								<option class="selectoption" value="2019">2019</option>
+								<option class="selectoption" value="2020">2020</option>
+								<option class="selectoption" value="2021">2021</option>
+								<option class="selectoption" value="2022">2022</option>
+								<option class="selectoption" value="2023">2023</option>
+								<option class="selectoption" value="2024">2024</option>
+								<option class="selectoption" value="2025">2025</option>
+							</select>
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+					<div id="secure_code" class="row_wrapper_div">
+						<div class="left_fields">
+							<input type="text" name="secure_code"
+								class="text ui-widget-content ui-corner-all infoText"
+								placeholder="* Security code" maxlength="3">
+						</div>
+						<div class="right_fields">
+							<span id="error_div" class="validateTips"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h3>ORDER SUMMARY</h3>
+			<div id="parent">
+				<div id="summary_error"><span id="summary_error_div" class="validateTips"></span></div>
+				<div id="final_shipping_address"></div>
+				<div id="final_billing_address"></div>
+				<div id="final_cart"></div>
+			</div>
+		</div>
+	</div>
+	<div id="left_wrapper2">
+		<p id="cart_header">ORDER SUMMARY</p>
+		<hr />
+		<div id="order_summary">
+			<div id="left_side">
+				<p id="cart_detail_header">Items subtotal:</p>
+				<p id="cart_detail_header">Estimated Shipping:</p>
+				<p id="cart_detail_header">Sales Tax (8%):</p>
+				<hr>
+				<p id="cart_detail_header">Total:</p>
+			</div>
+			<div id="right_side" >
+				<p id="cart_detail_header" class="total">$0.00</p>
+				<p id="cart_detail_header">$5.00</p>
+				<p id="cart_detail_header" class="salesTax">$0.00</p>
+				<hr>
+				<p id="cart_detail_header" class="totalAfterTax"></p>
+			</div>
+			<div>
+				<button type="button"
+					class="place_order_btn ui-widget-header ui-corner-all"
+					name="order_btn">Place my order</button>
+				<button type="button"
+					class="continue_btn ui-widget-header ui-corner-all"
+					name="continue_btn">Continue Shopping</button>
+			</div>
+			<div id="right_error_div" class="validateTips "></div>
+		</div>
+	</div>
+</div>
+<!-- body ends -->
+
+<jsp:include page="Footer.jsp"></jsp:include>

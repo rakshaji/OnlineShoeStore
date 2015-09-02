@@ -1,0 +1,44 @@
+use jadrn036;
+
+DROP TABLE IF EXISTS user_info;
+DROP TABLE IF EXISTS merchandise_in;
+DROP TABLE IF EXISTS merchandise_out;
+DROP TABLE IF EXISTS on_hand;
+
+CREATE TABLE user_info(
+	loginID		INT		NOT NULL 	auto_increment,
+	name		varchar(20)		NOT NULL,	
+	password	varchar(100)	NOT NULL,	
+	PRIMARY KEY	(loginID)
+	);
+	
+CREATE TABLE merchandise_in(
+	recordID	INT		NOT NULL 	auto_increment,
+	skuID		CHAR(7)		NOT NULL,
+	date		DATE,
+	quantity	INT,
+	PRIMARY KEY	(recordID),
+	FOREIGN KEY(skuID) REFERENCES product(sku)
+	);	
+
+CREATE TABLE merchandise_out(
+	recordID	INT		NOT NULL 	auto_increment,
+	skuID		CHAR(7)		NOT NULL,
+	date		DATE,
+	quantity	INT,
+	PRIMARY KEY	(recordID),
+	FOREIGN KEY(skuID) REFERENCES product(sku)
+	);
+
+CREATE TABLE on_hand (
+	skuID		CHAR(7)		NOT NULL UNIQUE,
+	last_date_modified		DATE,
+	on_hand_quantity		INT	DEFAULT 0,
+	FOREIGN KEY(skuID) REFERENCES product(sku)
+	);		
+	
+INSERT INTO user_info VALUES('', 'cs645','6CE43F067B9180FF21551DB797AC8BFD'); -- sp2015
+INSERT INTO user_info VALUES('', 'raksha.s','DFA88C09096FDB070A6DE6B46B4C76D6'); -- raksha
+INSERT INTO user_info VALUES('', 'ariggins','321FBA001C584E6E4E5C88E569C0ABBB'); -- riggins
+INSERT INTO user_info VALUES('', 'jadrn036','23BEBC09F002237C3D1D514772577829'); -- password036
+

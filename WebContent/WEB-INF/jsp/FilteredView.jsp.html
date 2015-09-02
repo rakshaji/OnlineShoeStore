@@ -1,0 +1,97 @@
+<!--    
+	  Singhania, Raksha    Account:  jadrn036
+	  CS645, Spring 2015
+	  Project #3
+-->
+
+<%@page import="helpers.AppHelper"%>
+<%@page import="helpers.Product"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="helpers.ApplicationConstants"%>
+<%@page import="org.apache.juli.logging.Log"%>
+<%@page import="org.apache.juli.logging.LogFactory"%>
+<jsp:include page="Header.jsp"></jsp:include>
+
+<input type="hidden" name="<%=ApplicationConstants.PARAM_CATEGORY %>"
+	value="<%=request.getParameter(ApplicationConstants.PARAM_CATEGORY)%>" />
+<input type="hidden" name="<%=ApplicationConstants.PARAM_VENDOR %>"
+	value="<%=request.getParameter(ApplicationConstants.PARAM_VENDOR)%>" />
+<input type="hidden" name="<%=ApplicationConstants.PARAM_PRICE %>"
+	value="<%=request.getParameter(ApplicationConstants.PARAM_PRICE)%>" />
+<input type="hidden" name="<%=ApplicationConstants.PARAM_SORT_ORDER %>"
+	value="<%=request.getParameter(ApplicationConstants.PARAM_SORT_ORDER)%>" />
+
+<!-- body starts -->
+<div id="main_body">
+	<div id="left_wrapper">
+		<div id="user_selection_div">
+			<div class="toggler">
+				<div class="portlet">
+					<h3 class="portlet-header">Your Selection</h3>
+					<div id="" class="portlet-content">
+						<ul id="checkbox">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="category_options_div">
+			<div class="toggler">
+				<div class="portlet">
+					<h3 class="portlet-header">Product Category</h3>
+					<div id="" class="portlet-content">
+						<ul id="checkbox">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="brands_options_div">
+			<div class="toggler">
+				<div class="portlet">
+					<h3 class="portlet-header">Product Brand</h3>
+					<div class="portlet-content">
+						<ul id="checkbox">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="price_filter_div">
+			<div class="toggler">
+				<div class="portlet">
+					<h3 class="portlet-header">Price Filter</h3>
+					<div class="portlet-content">
+						<div id="portlet-conten-wrapper">
+							<div class="left_only">
+								<span>$</span> <input type="text" class="price_input"
+									id="minimumAmount" placeholder="min" maxlength="5"> <span>
+									to $</span> <input type="text" class="price_input" id="maximumAmount"
+									placeholder="max" maxlength="5">
+							</div>
+							<div class="left_only">
+								<span id="go" class="ui-icon ui-icon-circle-arrow-e"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="right_wrapper">
+		<div id="filter_options_div">
+			<div id="sort_filter_div">
+				Sort By <select id="sort_filter_combo" class="ui-corner-all">
+					<option value="">None</option>
+					<option value="desc">Price - high to low</option>
+					<option value="asc">Price - low to high</option>
+				</select>
+			</div>
+		</div>
+		<jsp:include page="ProductsView.jsp"></jsp:include>
+	</div>
+</div>
+<!-- body ends -->
+
+<jsp:include page="Footer.jsp"></jsp:include>

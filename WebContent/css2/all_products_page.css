@@ -1,0 +1,584 @@
+/*
+#################################################
+###  Singhania, Raksha    Account:  jadrn036  ###
+###  CS645, Spring 2015						  ###
+###  Project #3								  ###
+#################################################
+ */
+
+h3#header {
+	margin: 0.2em;
+	padding: 0.2em;
+	text-align: left;
+}
+
+#spinner {
+	width: 75%;
+}
+
+#left_wrapper {
+	float: left;
+	width: 25%;
+	position: relative;
+	background-color: white;
+}
+
+#right_wrapper {
+	float: left;
+	width: 75%;
+}
+
+.toggler {
+	width: 242px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#button {
+	padding: .5em 1em;
+	text-decoration: none;
+	width: 45%;
+	margin: 5px;
+}
+
+#effect {
+	width: 240px;
+	height: 240px;
+	position: relative;
+}
+
+.portlet {
+	margin: 0 1em 1em 0;
+	width: 100%;
+}
+
+.portlet-header {
+	padding: 0.2em 0.3em;
+	margin-bottom: 0.5em;
+	position: relative;
+}
+
+.portlet-toggle {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -8px;
+}
+
+.portlet-content {
+	width: 100%;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+.price_input {
+	width: 40px;
+}
+
+.go_btn {
+	width: 20px;
+}
+
+#product_image {
+	height: auto;
+	max-height: 175px;
+}
+
+#product_image_div {
+	height: 175px;
+}
+
+#products_div {
+	float: left;
+	width: 100%;
+	height: 20%;
+}
+
+.product_wrapper {
+	float: left;
+	width: 25%;
+	cursor: pointer;
+	cursor: hand;
+	border: 1px solid white;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+	padding: 1% 5% 2% 3%;
+}
+
+.product_wrapper:hover {
+	border: 1px solid rgba(223, 217, 218, 0.91);
+	cursor: pointer;
+	cursor: hand;
+}
+
+.no_product, .product_detail {
+	display: block;
+	clear: both;
+	padding-top: 5px;
+	margin: 0 10px;
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #2f2f2b;
+}
+
+.no_product {
+	margin-top: 10px;
+	color: red;
+}
+
+.product_detail_status {
+	display: block;
+	clear: both;
+	padding-top: 5px;
+	margin: 0 10px;
+	font-size: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: darkorange;
+}
+
+.product_detail_category {
+	display: block;
+	clear: both;
+	padding-top: 5px;
+	margin: 0 10px;
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #2f2f2b;
+}
+
+.product_detail_price {
+	display: block;
+	clear: both;
+	padding-top: 5px;
+	margin: 0 10px;
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: black;
+	font-weight: bold;
+}
+
+.selected-item {
+	font-size: larger;
+	font-weight: bold;
+	width: 100%;
+	float: left;
+	padding: 0.2em;
+	margin-left: -5%;
+}
+
+.delete-selected-item {
+	float: right;
+}
+
+.product_detail_status_green {
+	display: block;
+	clear: both;
+	padding-top: 5px;
+	margin: 0 10px;
+	font-size: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 210px;
+	color: green;
+}
+
+.product_detail_status_red {
+	display: block;
+	clear: both;
+	padding-top: 5px;
+	margin: 0 10px;
+	font-size: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 210px;
+	color: red;
+}
+
+.product_detail_status_orange {
+	display: block;
+	clear: both;
+	padding-top: 5px;
+	margin: 0 10px;
+	font-size: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 210px;
+	color: orange;
+}
+
+.clear_all_div, .left_only{
+	float: left;
+}
+
+#sort_filter_div {
+	float: left;
+	font-size: larger;
+}
+
+#clear_all, .right_only{
+	float: right;
+}
+
+#product_detail_left_wrapper {
+	float: left;
+	width: 50%;
+	background-color: white;
+}
+
+#product_detail_right_wrapper {
+	float: left;
+	width: 30%;
+	padding-left: 15%;
+}
+
+#product_full_image {
+	border: 1px solid rgba(223, 217, 218, 0.91);
+	padding: 10%;
+}
+
+#dtl_price {
+	font-size: xx-large;
+	font-family: monospace;
+	font-weight: bold;
+	margin: 5%;
+}
+
+.add_to_cart_btn_div {
+	width: 90%;
+	padding: 1%;
+	font-size: large;
+	margin: 15% 5% 5% 5%;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#product_detail_wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	background-color: white;
+}
+
+#detail_header, #detail_status, #description {
+	font-size: larger;
+	margin: 5%;
+}
+
+#price_quantity_total_div {
+	height: 60%;
+	width: 60%;
+	font-size: small;
+	line-height: 10px;
+}
+
+#select_quantity_div {
+	float: left;
+	width: 30%;
+	line-height: 2px;
+}
+
+#price_div {
+	float: left;
+	width: 40%;
+}
+
+#total_div {
+	float: right;
+	width: 25%;
+}
+
+#price {
+	font-size: larger;
+	font-weight: bold;
+}
+
+#detail_header {
+	font-weight: bold;
+}
+
+#detail_status {
+	color: darkorange;
+}
+
+#stock_left {
+	font-size: smaller;
+	color: green;
+	font-weight: bold;
+}
+
+#portlet-conten-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	padding-bottom: 10%;
+}
+
+.addToCartHover {
+	min-height: 20px;
+	min-width: 40px;
+	position: absolute;
+	display: none;
+	cursor: pointer;
+	cursor: hand;
+	margin-left: 10%;
+}
+
+button:disabled {
+	background: #dddddd;
+	cursor: default;
+}
+
+#add_to_cart_div {
+	float: right;
+	background-color: white;
+	height: 30%;
+	width: 100%;
+}
+
+.validateTips {
+	border: 1px solid transparent;
+	padding: 0.3em;
+	float: left;
+	width: 90px;
+	margin-top: -0.1%;
+	position: absolute;
+}
+
+.ui-state-success {
+	border: 1px solid #008000;
+	background: #9fff9f url("../css/jquery-ui-custom/images/ui-bg_glass_95_fef1ec_1x400.png")
+		repeat;
+	color: #008000;
+}
+
+.ui-state-error {
+	padding: .3em;
+	text-decoration: none;
+	background: #f3d8d8
+		url("../css/jquery-ui-custom/images/ui-bg_diagonals-thick_75_f3d8d8_40x40.png") repeat;
+	border: 1px solid #c00;
+}
+
+.detail_msg {
+	margin-top: 1px;
+	width: 21%;
+}
+
+#cart_item {
+	height: 40%;
+	cursor: pointer;
+	cursor: hand;
+	border: 1px solid rgb(240, 236, 236);
+	float: left;
+	width: 100%;
+}
+
+#cart_header {
+	font-size: 14px;
+	padding: 1%;
+	font-weight: bold;
+}
+
+#cart_prod_info {
+	width: 75%;
+	float: left;
+	margin-left: 2%;
+	line-height: 2px;
+}
+
+#view_cart_item {
+	border: 1px solid rgb(240, 236, 236);
+	float: left;
+	width: 100%;
+	padding: 1% 0 1% 0;
+}
+
+#left_wrapper2 {
+	float: left;
+	width: 25%;
+	position: relative;
+	background-color: white;
+	font-size: small;
+}
+
+#right_wrapper2 {
+	float: left;
+	width: 55%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.continue_btn, .checkout_btn, .place_order_btn {
+	width: 100%;
+	padding: 2%;
+	margin: 1%;
+	text-transform: uppercase;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.infoText, #check_same_addr {
+	height: 30px;
+	padding: 0 30px 0 10px;
+	width: 320px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+label:not(.sub-menu_item ) {
+	display: block;
+	margin: 1%;
+}
+
+select:not(#sort_filter_combo ){
+	width: 320px;
+}
+
+#error_div {
+	width: 20%;
+	margin: 0.5%;
+}
+
+#success_div {
+	width: 50%;
+	margin: 1%;
+	font-size: larger;
+}
+
+.overflow_select {
+	height: 150px;
+}
+
+#country {
+	font-size: small;
+}
+
+.left_fields {
+	float: left;
+}
+
+.right_fields {
+	float: left;
+}
+
+.combo_div{
+	margin-top: 0.8%;
+	margin-bottom: 0.8%;
+}
+
+#right_error_div{
+	width: 90%;
+  	margin: 4%;
+}
+#summary_error_div{
+	width: 30%;
+}
+
+#summary_error{
+	margin-bottom: 6%;
+}
+
+.row_wrapper_div{
+	width: 100%;
+	float: left;
+}
+
+#checkout_header{
+	font-family: sans-serif;
+  	font-size: 12px;
+  	color: darkred;
+  	font-weight: bold;
+}
+#checkout_header_dtl{
+	font-family: Arial;
+  	font-size: 10px;
+ 	font-weight: bold;
+ 	line-height: 22px;
+}
+#checkout_cart_item{
+	height: 40%;
+	border-bottom: 1px solid lightgray;
+	float: left;
+	width: 100%;
+}
+#checkout_cart_info_div{
+	float: left;
+	margin-left: 2%;
+	line-height: 2px;
+	padding-top: 3%;
+	font-size: 13px;
+}
+#checkout_cart_info{
+	font-family: sans-serif;
+  	font-size: 12px;
+  	color: darkred;
+  	font-weight: bold;
+}
+
+#final_shipping_address, #final_billing_address{
+	float: left;
+  	width: 49%;
+	background: rgba(221, 220, 220, 0.34);
+	border-bottom: 1px solid lightgray;
+	border-top: 1px solid lightgray;
+	margin-bottom: 4%;
+	padding-left: 1%;
+}
+
+#right_side{
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+
+#left_side{
+	float: left;
+	width: 50%;
+	text-align: left;
+}
+
+.sku{
+	display: none;
+}
+
+button[name="delete"]{
+	cursor: pointer;
+	cursor: hand;
+	margin-top: 10%;
+}
+
+button[name='deleteall']{
+	cursor: pointer;
+	cursor: hand;
+	float: right;
+}
+
+#edit_cart, #edit_address{
+	color: #00F;
+	margin-left: 2%;
+	cursor: pointer;
+	cursor: hand;
+	text-decoration: underline;
+}
+
+#edit_cart:hover, #edit_address:hover{
+	text-decoration: underline;
+}
+
+.msg{
+	width:9%;
+}

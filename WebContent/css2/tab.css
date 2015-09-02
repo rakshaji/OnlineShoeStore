@@ -1,0 +1,294 @@
+/*
+#################################################
+###  Singhania, Raksha    Account:  jadrn036  ###
+###  CS645, Spring 2015                          ###
+###  Project #2                                  ###
+#################################################
+*/
+html, body {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+tr.highlight {
+    background-color: #88d9ff;
+    color: White;
+    cursor: pointer;
+    cursor: hand;
+}
+tr.click_highlight {
+    background-color: #20b7ff;
+    color: White;
+}
+
+.link {
+    cursor: pointer;
+    cursor: hand;
+    color: purple;
+    text-decoration: none;
+}
+
+.link:hover{
+    cursor: pointer;
+    cursor: hand;
+    color: blue;
+    text-decoration: underline ;
+}
+
+.welcome {
+    text-align: right;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: small;
+    font-family: monospace;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    min-height: 30%;
+    min-width: 30%;
+    max-height: 32px;
+}
+
+img {
+    width: 150px;
+    height: auto;
+    min-height: 30%;
+    min-width: 30%;
+}
+
+/* ********************* */
+body {
+    font-size: 62.5%;
+    padding: 0 15% 3% 15%;
+}
+
+label, input {
+    display: block;
+}
+
+input.text {
+    margin-bottom: 12px;
+    width: 95%;
+    padding: .4em;
+}
+
+fieldset {
+    padding: 0 0 0 5px;
+    border: 0;
+    margin-top: 5px;
+}
+
+h1 {
+    font-size: 1.2em;
+    margin: .6em 0;
+}
+
+.ui-dialog .ui-state-error {
+    padding: .3em;
+    text-decoration: none;
+}
+
+.validateTips {
+    border: 1px solid transparent;
+    padding: 0.3em;
+    margin: 0.6em;
+}
+
+div#search-contain {
+    width: 100%;
+    overflow: auto;
+    height: 230px;
+}
+
+div#search-contain table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+div#search-contain table td, div#search-contain table th {
+    border: 1px solid #eee;
+    padding: .6em 10px;
+    text-align: left;
+}
+
+div#detail-contain table td:first-child, div#detail-contain table th:first-child
+    {
+    width: 20%;
+}
+
+div#detail-contain table tr:last-child {
+    height: 220px;
+}
+
+div#detail-contain {
+    width: 100%;
+}
+
+div#detail-contain table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+div#detail-contain table td, div#users-contain table th {
+    border: 1px solid #eee;
+    padding: .6em 10px;
+    text-align: left;
+}
+
+div#history-contain {
+    width: 100%;
+    overflow: auto;
+      height: 530px;
+}
+
+div#history-contain table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+div#history-contain table td, div#history-contain table th {
+    border: 1px solid #eee;
+    padding: .6em 10px;
+    text-align: left;
+}
+
+/* toggler div */
+.history_toggler {
+  width: 100%;
+  height: 570px;
+  padding: 10px;
+}
+
+#history_effect {
+    width: 100%;
+    height: 580px;
+    position: relative;
+}
+
+#history_effect h3 {
+    margin: 0;
+    padding: 0.2em;
+    text-align: center;
+}
+
+.details_toggler {
+    width: 100%;
+    height: 580px;
+    padding: 10px;
+}
+
+#details_effect {
+    width: 100%;
+    height: 580px;
+    position: relative;
+}
+
+#details_effect h3 {
+    margin: 0;
+    padding: 0.2em;
+    text-align: center;
+}
+
+.search_toggler {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+}
+
+#search_effect {
+    width: 100%;
+    height: 580px;
+    position: relative;
+}
+
+#search_effect h3 {
+    margin: 0;
+    padding: 0.2em;
+    text-align: center;
+}
+
+#available_stock_effect {
+    width: 100%;
+    height: 250px;
+    position: relative;
+      border-bottom: 0;
+}
+
+.available_stock_toggler {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+}
+
+#available_stock_effect h3 {
+    margin: 0;
+    padding: 0.2em;
+    text-align: center;
+}
+
+#button {
+    padding: .5em 1em;
+    text-decoration: none;
+    width: 45%;
+    margin: 5px;
+}
+
+#effect h3 {
+    margin: 0;
+    padding: 0.2em;
+    text-align: center;
+}
+
+/* ********** */
+select {
+    margin-bottom: 12px;
+    width: 98%;
+    padding: .4em;
+}
+
+.overflow {
+    height: 50px;
+}
+
+/* */
+div#left {
+    width: 32%;
+    padding-right: 10px;
+    height: 600px;
+    float: left;
+}
+
+div#middle {
+    width: 32%;
+    height: 600px;
+    float: left;
+}
+
+div#right {
+    width: 32%;
+    height: 590px;
+    float: left;
+    padding-left: 10px;
+}
+
+div#wrapper {
+    width: 100%;
+    height: 595px;
+    margin-top: -1%;
+}
+
+.ui-state-success {
+    border: 1px solid #008000;
+    background: #9fff9f url("images/ui-bg_glass_95_fef1ec_1x400.png") 50%
+        50% repeat-x;
+    color: #008000;
+}

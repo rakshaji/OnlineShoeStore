@@ -1,0 +1,60 @@
+<!--    
+	  Singhania, Raksha    Account:  jadrn036
+	  CS645, Spring 2015
+	  Project #3
+-->
+
+<%@page import="helpers.AppHelper"%>
+<%@page import="helpers.Product"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Iterator"%>
+<jsp:include page="Header.jsp"></jsp:include>
+
+<!-- body starts -->
+<div id="main_body">
+
+	<%
+		ArrayList<Product> products = AppHelper.getProducts(request);
+		if (products != null) {
+			Iterator it = products.iterator();
+			while (it.hasNext()) {
+				Product product = (Product) it.next();
+				if (product != null) {
+	%>
+	<div id="product_detail_wrapper">
+		<div id="product_detail_left_wrapper">
+			<div id="product_full_size">
+				<img id="product_full_image"
+					src="/~jadrn036/proj1/tabs/_p_images/<%=product.getImage()%>">
+			</div>
+		</div>
+		<div id="product_detail_right_wrapper">
+			<div id="product_details_div">
+				<div id="msg_div" class="validateTips detail_msg"></div>
+				<button type="button" id="add_to_cart_btn"
+					name="<%=product.getSku()%>"
+					class="add_to_cart_btn_div ui-widget-header ui-corner-all">ADD
+					TO CART</button>
+				<hr />
+				<p id="dtl_price">
+					$<%=product.getPrice()%></p>
+				<p id="<%=product.getOnHandQuantity()%>" class="detail_status"><%=product.getAvailabilityStatus()%></p>
+				<p id="detail_header">Manufacturer:</p>
+				<span id="description" name="model"><%=product.getManufacturer()%></span>
+				<p id="detail_header">Description:</p>
+				<p id="description"><%=product.getDescription()%></p>
+				<p id="detail_header">Features:</p>
+				<p id="description"><%=product.getFeatures()%></p>
+			</div>
+		</div>
+	</div>
+	<%
+				}
+			}
+		}
+	%>
+</div>
+
+<!-- body ends -->
+
+<jsp:include page="Footer.jsp"></jsp:include>
